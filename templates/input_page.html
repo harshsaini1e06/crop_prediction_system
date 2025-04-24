@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background: #f4f4f9;
+        }
+        header, footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em 0;
+        }
+        .container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-group input {
+            width: calc(100% - 22px);
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .form-group input:focus {
+            border-color: #007bff;
+        }
+        .form-group button {
+            width: 100%;
+            padding: 10px;
+            background: #007bff;
+            border: none;
+            border-radius: 4px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .form-group button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Data Input Form</h1>
+    </header>
+    <div class="container">
+        <form action="{{ url_for('predicted_page') }}" method="post">
+            <div class="form-group">
+                <label for="K">K</label>
+                <input type="text" name="K" id="K" placeholder="Enter value for K" required>
+            </div>
+            <div class="form-group">
+                <label for="N">N</label>
+                <input type="text" name="N" id="N" placeholder="Enter value for N" required>
+            </div>
+            <div class="form-group">
+                <label for="P">P</label>
+                <input type="text" name="P" id="P" placeholder="Enter value for P" required>
+            </div>
+            <div class="form-group">
+                <label for="temprature">Temperature</label>
+                <input type="text" name="temprature" id="temprature" placeholder="Enter temperature" required>
+            </div>
+            <div class="form-group">
+                <label for="ph">pH</label>
+                <input type="text" name="ph" id="ph" placeholder="Enter pH level" required>
+            </div>
+            <div class="form-group">
+                <label for="humidity">Humidity</label>
+                <input type="text" name="humidity" id="humidity" placeholder="Enter humidity level" required>
+            </div>
+            <div class="form-group">
+                <label for="rainfall">rainfall</label>
+                <input type="text" name="rainfall" id="rainfall" placeholder="Enter rainfall level" required>
+            </div>
+            <div class="form-group">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+    <footer>
+        <!-- <p>&copy; 2024 Your Company. All rights reserved.</p> -->
+    </footer>
+</body>
+</html>
